@@ -1,56 +1,48 @@
 /**
- * FlowSync.ai - Script Principal da Aplicação
- * Recursos:
- * 1. Sistema Global de Notificações Toast
- * 2. Alternador de Tema Escuro / Claro (com persistência no localStorage)
- * 3. Menu Mobile Responsivo
- * 4. Filtros Dinâmicos de Soluções (Cliente Final / Empresa)
- * 5. Alternador de Preços (Faturamento Mensal / Anual)
- * 6. Envio e Feedback do Formulário de Demonstração
+ * FlowSync.ai - Script Principal Unificado
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  // ==========================================
-  // 1. SISTEMA DE TOAST NOTIFICATIONS
-  // ==========================================
-  function showToast(message, type = 'info') {
-    const container = document.getElementById('toast-container');
-    if (!container) return;
-
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    
-    let iconName = 'ph-check-circle';
-    if (type === 'warning') iconName = 'ph-warning';
-    if (type === 'info') iconName = 'ph-info';
-
-    toast.innerHTML = `<i class="ph ${iconName}"></i>`;
-    const span = document.createElement('span');
-    span.textContent = message;
-    toast.appendChild(span);
-
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateX(100%)';
-      toast.style.transition = 'all 0.3s ease';
-      setTimeout(() => toast.remove(), 300);
-    }, 3500);
+// ==========================================
+// 1. SISTEMA DE TOAST NOTIFICATIONS (BLINDADO)
+// ==========================================
+function showToast(message, type = 'info') {
+  let container = document.getElementById('toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'toast-container';
+    container.className = 'toast-container';
+    document.body.appendChild(container);
   }
 
-  // ==========================================
-  // 2. ALTERNADOR DE TEMA (DARK / LIGHT)
-  // ==========================================
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  
+  const iconName = type === 'warning' ? 'ph-warning' : 'ph-check-circle';
+  toast.innerHTML = `<i class="ph ${iconName}"></i> <span>${message}</span>`;
+  
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(100%)';
+    toast.style.transition = 'all 0.4s ease';
+    setTimeout(() => toast.remove(), 400);
+  }, 4000);
+}
+
+// ==========================================
+// 2. INICIALIZAÇÃO DA PÁGINA (ÚNICO LISTENER)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- ALTERNADOR DE TEMA (DARK / LIGHT) ---
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
 
-  // Recupera o tema prévio salvo no navegador
   const savedTheme = localStorage.getItem('flowsync-theme');
   if (savedTheme === 'light') {
     document.body.classList.add('light-theme');
-    if (themeIcon) {
-      themeIcon.classList.replace('ph-moon', 'ph-sun');
-    }
+    if (themeIcon) themeIcon.classList.replace('ph-moon', 'ph-sun');
   }
 
   if (themeToggle && themeIcon) {
@@ -68,9 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==========================================
-  // 3. MENU MOBILE RESPONSIVO
-  // ==========================================
+  // --- MENU MOBILE ---
   const menuBtn = document.getElementById('menu-btn');
   const navMenu = document.getElementById('nav-menu');
 
@@ -79,15 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('show');
     });
 
-    // Fecha o menu automaticamente ao clicar em qualquer link
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => navMenu.classList.remove('show'));
     });
   }
 
-  // ==========================================
-  // 4. FILTRO DINÂMICO DE RECURSOS
-  // ==========================================
+  // --- FILTRO DE RECURSOS (CLIENTE / EMPRESA) ---
   const filterButtons = document.querySelectorAll('.filter-btn');
   const featureCards = document.querySelectorAll('.feature-card');
 
@@ -109,9 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ==========================================
-  // 5. TOGGLE DE PREÇOS (MENSAL / ANUAL)
-  // ==========================================
+  // --- TOGGLE DE PREÇOS (MENSAL / ANUAL) ---
   const billingSwitch = document.getElementById('billing-switch');
   const labelMonthly = document.getElementById('label-monthly');
   const labelAnnual = document.getElementById('label-annual');
@@ -131,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
       priceAmounts.forEach(price => {
         const monthly = price.getAttribute('data-monthly');
         const annual = price.getAttribute('data-annual');
-
         if (monthly && annual) {
           price.textContent = isAnnual ? annual : monthly;
         }
@@ -141,14 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==========================================
-  // 6. FORMULÁRIO DE CONTATO & DEMO
-  // ==========================================
+  // --- FORMULÁRIO DE CONTATO & DEMO ---
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
-      const name = document.getElementById('name').value.trim();
+
+      const nameInput = document.getElementById('name');
+      const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'Cliente';
+
       showToast(`Obrigado, ${name}! Solicitação recebida com sucesso.`, 'info');
       contactForm.reset();
     });
