@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FlowSync — Plataforma inteligente de gestão e automação para tarefas individuais e rotinas empresariais.">
+  <title>FlowSync — Gestão & Automação Inteligente</title>
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Ícones Phosphor -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- ================= HEADER / NAVEGAÇÃO ================= -->
+  <header class="navbar">
+    <a href="#" class="logo">
+      <i class="ph ph-lightning"></i>
+      <span>FlowSync</span>
+    </a>
+
+    <nav class="nav-links" id="nav-menu">
+      <a href="#solucoes">Soluções</a>
+      <a href="#calculadora">Calculadora ROI</a>
+      <a href="#planos">Planos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="theme-toggle" class="btn-icon" aria-label="Alternar Tema Claro/Escuro" title="Alternar tema">
+        <i class="ph ph-moon" id="theme-icon"></i>
+      </button>
+      <a href="#contato" class="btn-primary">Testar Grátis</a>
+      <button id="menu-btn" class="mobile-toggle" aria-label="Abrir Menu">
+        <i class="ph ph-list"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= SEÇÃO HERO ================= -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <i class="ph ph-sparkle"></i> Novo: Automação com IA em tempo real
+      </div>
+      
+      <h1 class="hero-title">
+        Simplifique processos. <br>
+        <span class="gradient-text">Ganhe tempo para o que importa.</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Uma plataforma desenhada para clientes finais organizarem tarefas diárias e para empresas escalarem seus fluxos de atendimento e inteligência analítica.
+      </p>
+      
+      <div class="hero-cta">
+        <a href="#contato" class="btn-primary btn-lg">
+          Começar Gratuitamente <i class="ph ph-arrow-right"></i>
+        </a>
+        <a href="#calculadora" class="btn-secondary btn-lg">
+          <i class="ph ph-calculator"></i> Simular Economia
+        </a>
+      </div>
+
+      <!-- Mockup Interativo do Painel -->
+      <div class="hero-preview">
+        <div class="glass-card mockup-window">
+          <div class="mockup-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="mockup-url">flowsync.ai/dashboard</span>
+          </div>
+          <div class="mockup-content">
+            <div class="stat-box">
+              <span>Eficiência Operacional</span>
+              <strong>+145%</strong>
+              <small class="text-success"><i class="ph ph-trend-up"></i> +24% este mês</small>
+            </div>
+            <div class="stat-box">
+              <span>Horas Salvas / Mês</span>
+              <strong>64 hrs</strong>
+              <small class="text-cyan"><i class="ph ph-clock"></i> Tarefas manuais</small>
+            </div>
+            <div class="stat-box">
+              <span>Status dos Processos</span>
+              <strong class="text-success">100% Ativo</strong>
+              <small class="text-muted"><i class="ph ph-check"></i> Sem interrupções</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO RECURSOS / SOLUÇÕES ================= -->
+  <section id="solucoes" class="features-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge">Nossas Funcionalidades</span>
+        <h2>Tecnologia adaptável ao seu <span class="gradient-text">objetivo</span></h2>
+        <p>Explore as ferramentas criadas para quem executa ou para quem gerencia equipes inteiras.</p>
+      </div>
+
+      <!-- Filtros Dinâmicos -->
+      <div class="filter-controls text-center">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="cliente">Para Clientes Finais</button>
+        <button class="filter-btn" data-filter="empresa">Para Empresas</button>
+      </div>
+
+      <!-- Grid de Cards de Recursos -->
+      <div class="features-grid">
+        <div class="feature-card glass-card" data-category="cliente">
+          <div class="feature-icon"><i class="ph ph-user-circle-gear"></i></div>
+          <h3>Organização Pessoal & Rotinas</h3>
+          <p>Centralize tarefas diárias, lembretes inteligentes e integração com sua agenda sem esforço manual.</p>
+        </div>
+
+        <div class="feature-card glass-card" data-category="empresa">
+          <div class="feature-icon"><i class="ph ph-robot"></i></div>
+          <h3>Robôs de Automação (RPA)</h3>
+          <p>Elimine rotinas repetitivas de planilhas, geração de faturas e extração de dados com bots 24/7.</p>
+        </div>
+
+        <div class="feature-card glass-card" data-category="cliente">
+          <div class="feature-icon"><i class="ph ph-chat-centered-text"></i></div>
+          <h3>Assistente de IA Pessoal</h3>
+          <p>Resuma documentos complexos, elabore respostas rápidas e pesquise informações com suporte de LLMs.</p>
+        </div>
+
+        <div class="feature-card glass-card" data-category="empresa">
+          <div class="feature-icon"><i class="ph ph-chart-line-up"></i></div>
+          <h3>Dashboards Preditivos</h3>
+          <p>Métricas de vendas, engajamento e retenção projetadas com modelos analíticos em tempo real.</p>
+        </div>
+
+        <div class="feature-card glass-card" data-category="cliente">
+          <div class="feature-icon"><i class="ph ph-shield-check"></i></div>
+          <h3>Privacidade & Proteção de Dados</h3>
+          <p>Seus arquivos e preferências protegidos por criptografia de ponta sem compartilhamento externo.</p>
+        </div>
+
+        <div class="feature-card glass-card" data-category="empresa">
+          <div class="feature-icon"><i class="ph ph-plugs-connected"></i></div>
+          <h3>Hub de Integração de APIs</h3>
+          <p>Conecte ERPs, CRMs e plataformas como WhatsApp, Slack e Hubspot em segundos via webhooks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO CALCULADORA DE ROI ================= -->
+  <section id="calculadora" class="calculator-section">
+    <div class="calculator-container glass-card">
+      <div class="section-header text-center">
+        <span class="badge">Simule Seus Ganhos</span>
+        <h2>Calcule o impacto do <span class="gradient-text">FlowSync</span> na sua rotina</h2>
+        <p>Veja em tempo real a estimativa de horas e recursos economizados ao automatizar seus processos.</p>
+      </div>
+
+      <div class="calculator-grid">
+        <!-- Entradas dos Sliders -->
+        <div class="calculator-inputs">
+          <div class="input-group">
+            <div class="label-wrapper">
+              <label for="hours-slider"><i class="ph ph-clock"></i> Horas manuais semanais:</label>
+              <span id="hours-val" class="slider-value">15 h</span>
+            </div>
+            <input type="range" id="hours-slider" min="2" max="40" value="15" step="1">
+          </div>
+
+          <div class="input-group">
+            <div class="label-wrapper">
+              <label for="team-slider"><i class="ph ph-users"></i> Número de pessoas na operação:</label>
+              <span id="team-val" class="slider-value">3 pessoas</span>
+            </div>
+            <input type="range" id="team-slider" min="1" max="25" value="3" step="1">
+          </div>
+
+          <div class="input-group">
+            <div class="label-wrapper">
+              <label for="rate-slider"><i class="ph ph-currency-dollar"></i> Custo médio da hora de trabalho:</label>
+              <span id="rate-val" class="slider-value">R$ 50 /h</span>
+            </div>
+            <input type="range" id="rate-slider" min="20" max="200" value="50" step="5">
+          </div>
+        </div>
+
+        <!-- Card de Resultados -->
+        <div class="calculator-results highlight-card">
+          <h3>Estimativa de Economia</h3>
+
+          <div class="metric">
+            <span class="metric-label">Horas salvas anualmente:</span>
+            <strong id="res-hours" class="metric-value">1.638 horas</strong>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Economia financeira estimada:</span>
+            <strong id="res-savings" class="metric-value gradient-text">R$ 81.900,00</strong>
+          </div>
+
+          <p class="roi-note">
+            <i class="ph ph-check-circle"></i> Estimativa calculada com 70% de otimização em rotinas manuais.
+          </p>
+
+          <a href="#planos" class="btn-primary btn-block">Garantir Esta Economia <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO PLANOS & PREÇOS ================= -->
+  <section id="planos" class="pricing-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge">Valores Transparentes</span>
+        <h2>Escolha o plano ideal para a sua <span class="gradient-text">escala</span></h2>
+        
+        <!-- Toggle Faturamento Mensal / Anual -->
+        <div class="billing-toggle">
+          <span id="label-monthly" class="toggle-label active">Faturamento Mensal</span>
+          <button id="billing-switch" class="switch-btn" aria-label="Alternar faturamento mensal e anual">
+            <span class="switch-ball"></span>
+          </button>
+          <span id="label-annual" class="toggle-label">Anual <span class="discount-tag">Economize 20%</span></span>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plano Básico / Cliente Final -->
+        <div class="pricing-card glass-card">
+          <h3>Individual</h3>
+          <p class="plan-desc">Perfeito para profissionais autônomos e pessoas físicas.</p>
+          <div class="plan-price">
+            <strong class="price-amount" data-monthly="R$ 49" data-annual="R$ 39">R$ 49</strong>
+            <span class="price-period">/mês</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="ph ph-check"></i> Até 5 rotinas automatizadas</li>
+            <li><i class="ph ph-check"></i> Assistente pessoal básico</li>
+            <li><i class="ph ph-check"></i> Suporte via e-mail</li>
+          </ul>
+          <a href="#contato" class="btn-secondary btn-block">Começar com Individual</a>
+        </div>
+
+        <!-- Plano Pro / Destaque -->
+        <div class="pricing-card glass-card featured">
+          <div class="featured-badge">Mais Escolhido</div>
+          <h3>Profissional</h3>
+          <p class="plan-desc">Automação avançada para quem precisa de produtividade total.</p>
+          <div class="plan-price">
+            <strong class="price-amount" data-monthly="R$ 149" data-annual="R$ 119">R$ 149</strong>
+            <span class="price-period">/mês</span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="ph ph-check"></i> Rotinas ilimitadas</li>
+            <li><i class="ph ph-check"></i> Integrações diretas via Webhooks</li>
+            <li><i class="ph ph-check"></i> Suporte prioritário 24/7</li>
+            <li><i class="ph ph-check"></i> Treinamento com IA personalizada</li>
+          </ul>
+          <a href="#contato" class="btn-primary btn-block">Assinar Plano Pro</a>
+        </div>
+
+        <!-- Plano Corporativo -->
+        <div class="pricing-card glass-card">
+          <h3>Enterprise</h3>
+          <p class="plan-desc">Soluções dedicadas para empresas com múltiplos setores.</p>
+          <div class="plan-price">
+            <strong class="price-amount">Sob Consulta</strong>
+          </div>
+          <ul class="plan-features">
+            <li><i class="ph ph-check"></i> Servidor e banco dedicados</li>
+            <li><i class="ph ph-check"></i> SLA de 99.9% garantido em contrato</li>
+            <li><i class="ph ph-check"></i> Suporte com engenheiro de contas</li>
+            <li><i class="ph ph-check"></i> Conformidade estrita LGPD/GDPR</li>
+          </ul>
+          <a href="#contato" class="btn-secondary btn-block">Falar com Consultor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO CONTATO ================= -->
+  <section id="contato" class="contact-section">
+    <div class="container contact-container glass-card">
+      <div class="section-header text-center">
+        <span class="badge">Primeiro Passo</span>
+        <h2>Fale com nossos <span class="gradient-text">especialistas</span></h2>
+        <p>Preencha os campos abaixo para solicitar um teste prático sem compromisso.</p>
+      </div>
+
+      <form id="contact-form" class="form-grid">
+        <div class="form-group">
+          <label for="name">Nome Completo *</label>
+          <input type="text" id="name" required placeholder="Ex: Ana Souza">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail Profissional *</label>
+          <input type="email" id="email" required placeholder="ana@empresa.com">
+        </div>
+
+        <div class="form-group">
+          <label for="profile">Perfil de Uso</label>
+          <select id="profile">
+            <option value="individual">Cliente Final / Autônomo</option>
+            <option value="empresa">Empresa / Provedor de Serviços</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="objective">Principal Objetivo</label>
+          <select id="objective">
+            <option value="automacao">Redução de Tarefas Manuais</option>
+            <option value="ia">Implementação de Agentes IA</option>
+            <option value="integracao">Integração de Sistemas</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">Mensagem ou Dúvida (opcional)</label>
+          <textarea id="message" rows="3" placeholder="Conte brevemente sobre o seu fluxo de trabalho..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-block full-width btn-lg">
+          Solicitar Demonstração Gratuita <i class="ph ph-paper-plane-tilt"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <i class="ph ph-lightning"></i>
+          <span>FlowSync</span>
+        </a>
+        <p class="text-muted">Potencializando rotinas individuais e automações corporativas.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Navegação</h4>
+          <a href="#solucoes">Soluções</a>
+          <a href="#calculadora">Calculadora ROI</a>
+          <a href="#planos">Planos</a>
+        </div>
+        <div class="link-group">
+          <h4>Legal</h4>
+          <a href="#">Privacidade</a>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Segurança LGPD</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 FlowSync AI. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Container de Feedback dos Toasts -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Script Único Centralizado -->
+  <script src="main.js"></script>
+  <script src="calculator.js"></script>
+</body>
+</html>
